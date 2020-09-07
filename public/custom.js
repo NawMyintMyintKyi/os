@@ -127,6 +127,9 @@ $(document).ready(function(){
       update_cart_count();
 
     })
+
+
+    
     
 
     function show_cart(){
@@ -219,6 +222,36 @@ $(document).ready(function(){
     		})
     	}
     })
+ 
+
+    $(".product_table").on('click','.delete_btn',function(){
+      var myid=$(this).data('id');
+      //alert(id);
+      var mycart=localStorage.getItem('mycart');
+      var mycart_obj=JSON.parse(mycart);
+      $.each(mycart_obj.product_list,function(i,v){
+        if(v){
+        if(v.id==myid){
+          
+            var ans=confirm('Are you sure to delete?');
+            if(ans){
+              //console.log(mycart_obj);
+              mycart_obj.product_list.splice(i,1);
+            }
+          
+           
+      }
+    }
+
+      })
+
+
+      localStorage.setItem('mycart', JSON.stringify(mycart_obj));
+      show_cart();
+      update_cart_count();
+
+    })
+
 
  })
 

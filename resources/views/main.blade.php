@@ -114,6 +114,7 @@
 
 		            	@foreach($items as $item)
 		                <div class="item">
+		                	<a href="{{route('itemdetailpage',$item->id)}}">
 		                    <div class="pad15">
 		                    	<img src="{{asset($item->photo)}}" class="img-fluid" width="100" height="100" >
 		                        <p class="text-truncate">{{$item->name}}</p>
@@ -137,6 +138,7 @@
 
 		                    </div>
 		                </div>
+		            </a>
 		                @endforeach
 		                
 		                </div>
@@ -735,13 +737,14 @@
 
 	    <!-- Brand Store Item -->
 	    <section class="customer-logos slider mt-5">
+	    	 @foreach($brands as $brand)
 	      	<div class="slide">
-	      		<a href="">
-		      		<img src="image/brand/loacker_logo.jpg">
+		  		<a href="{{route('brandpage',$brand->id)}}">
+		      		<img src="{{asset($brand->photo)}}" class="img-fluid">
 		      	</a>
 	      	</div>
 	      	
-	      	<div class="slide">
+	      	{{-- <div class="slide">
 	      		<a href="">
 	      			<img src="image/brand/lockandlock_logo.png">
 	      		</a>
@@ -787,7 +790,9 @@
 	      		<a href="">
 	      			<img src="image/brand/ariel_logo.png">
 	      		</a>
-	      	</div>
+	      	</div> --}}
+	      	
+	      	@endforeach
 	   	</section>
 
 	    <div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>

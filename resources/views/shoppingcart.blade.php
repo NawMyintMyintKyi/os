@@ -78,7 +78,4 @@
 
 		@section('script')
 		<script type="text/javascript" src="{{asset('custom.js')}}"></script>
-		
-
-	</div>
-	@endsection
+		@endsection

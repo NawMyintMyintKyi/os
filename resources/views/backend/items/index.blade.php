@@ -29,7 +29,7 @@
 									<td>{{$item->photo}}</td>
 									<td>
 										<a href="" class="btn btn-primary">Detail</a>
-										<a href="" class="btn btn-danger">Delete</a>
+										<a href="" class="btn btn-danger delete_btn">Delete</a>
 										<a href="{{route('items.edit',$item->id)}}" class="btn btn-info">Edit</a>
 										
 									</td>
@@ -45,3 +45,6 @@
 			</div>
 	
 @endsection
+@section('script')
+		<script type="text/javascript" src="{{asset('custom.js')}}"></script>
+		@endsection
